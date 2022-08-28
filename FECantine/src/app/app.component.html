@@ -1,0 +1,21 @@
+<app-navigation></app-navigation>
+<main>
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <div class="panier-holder">
+        <app-panier></app-panier>
+      </div>
+    </mat-drawer>
+    <div class="content-holder">
+      <router-outlet></router-outlet>    
+    </div>
+  </mat-drawer-container>
+
+  <div class="cart-btn" (click)="togglePanier()">
+    <mat-icon>
+      shopping_cart
+    </mat-icon>
+  </div>
+
+</main>
+<app-footer></app-footer>

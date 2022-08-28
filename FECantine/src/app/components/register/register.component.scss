@@ -1,0 +1,39 @@
+form {
+    background-color: rgb(226, 201, 164);
+    margin: 60px auto;
+    width: 300px;
+    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+}
+
+mat-form-field{
+    width: 300px;
+}
+
+.mat-form-field-wrap{
+    padding: 0px;
+}
+
+.login-form-btn{
+    width: 300px;
+    background-color: rgb(60, 57, 53);
+    color: rgb(226, 201, 164);
+    border-radius: 0;
+    border-bottom: 1px solid rgb(226, 201, 164);
+    height: 60px;
+}
+
+.login-form-btn:hover {
+    color: rgb(60, 57, 53);
+    background-color: rgb(86, 103, 83);
+}
+
+input{
+    background-color: transparent;
+}
+
+.error-message {
+    text-align: center;
+    color: red;
+}

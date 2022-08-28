@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: ConfigServer
+  security:
+    user:
+      name: user
+      password: pass
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/aKimt/CantineConfig
+          clone-on-start: true
+          default-label: services
+

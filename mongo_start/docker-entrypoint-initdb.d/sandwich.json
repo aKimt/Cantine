@@ -1,0 +1,69 @@
+[{
+  "_id": {
+    "$oid": "6245a4820b850a4823a66e6c"
+  },
+  "nom": "Le mauvais gout",
+  "desc": "préparation mystère, pour les téméraires",
+  "composition": [
+    {
+      "ingredient": "baguette grise",
+      "qte": 0.5,
+      "unite": "baguette"
+    },
+    {
+      "ingredient": "confiture de fraise",
+      "qte": 25,
+      "unite": "grammes"
+    },
+    {
+      "ingredient": "hareng saur",
+      "qte": 75,
+      "unite": "grammes"
+    },
+    {
+      "ingredient": "fromage de Herve",
+      "qte": 60,
+      "unite": "grammes"
+    },
+    {
+      "ingredient": "cornichons",
+      "qte": 50,
+      "unite": "grammes"
+    },
+    {
+      "ingredient": "chocolat noir fondu",
+      "qte": 125,
+      "unite": "grammes"
+    }
+  ],
+  "prix": 3.05
+},{
+  "_id": {
+    "$oid": "6245a7160b850a4823a66e6e"
+  },
+  "nom": "Suppléments",
+  "desc": "",
+  "composition": [
+    {
+      "ingredient": "salade",
+      "qte": 4,
+      "unite": "feuilles"
+    },
+    {
+      "ingredient": "oeuf dur",
+      "qte": 0.5,
+      "unite": "oeufs"
+    },
+    {
+      "ingredient": "mayonnaise",
+      "qte": 1,
+      "unite": "portion"
+    },
+    {
+      "ingredient": "cornichons",
+      "qte": 50,
+      "unite": "grammes"
+    }
+  ],
+  "prix": 0
+}]

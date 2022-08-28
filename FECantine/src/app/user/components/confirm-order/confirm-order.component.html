@@ -1,0 +1,16 @@
+<div>
+
+    <form [formGroup]="form" (ngSubmit)="confirm()">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>date d'envoi</mat-label>
+                <input matInput type="datetime-local" formControlName="date">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <button mat-button class="login-form-btn" type="submit">confirmer</button>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,47 @@
+[{
+  "_id": {
+    "$oid": "6245a5f70b850a4823a66e6d"
+  },
+  "nom": "Boulets du chef",
+  "desc": "2 boulets sauce grenadine",
+  "composition": [
+    {
+      "ingredient": "haché de tortue",
+      "qte": 200,
+      "unite": "grammes"
+    },
+    {
+      "ingredient": "grenadine",
+      "qte": 5,
+      "unite": "cl"
+    },
+    {
+      "ingredient": "purée de pomme de terres",
+      "qte": 125,
+      "unite": "grammes"
+    },
+    {
+      "ingredient": "compote de gingembre",
+      "qte": 100,
+      "unite": "grammes"
+    }
+  ],
+  "prix": 4,
+  "dates": [
+    {
+      "$date": {
+        "$numberLong": "1648684800000"
+      }
+    },
+    {
+      "$date": {
+        "$numberLong": "1639526400000"
+      }
+    },
+    {
+      "$date": {
+        "$numberLong": "1649376000000"
+      }
+    }
+  ]
+}]

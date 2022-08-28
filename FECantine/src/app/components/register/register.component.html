@@ -1,0 +1,60 @@
+<div>
+
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>nom d'utilisateur</mat-label>
+                <input matInput formControlName="login">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Votre mot de passe</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="pwd">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Confirmer le password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirm">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+
+        
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Nom</mat-label>
+                <input matInput formControlName="nom">
+            </mat-form-field>
+        </div>
+
+        
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>prénom</mat-label>
+                <input matInput formControlName="prenom">
+            </mat-form-field>
+        </div>
+
+        
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>bureau</mat-label>
+                <input matInput formControlName="bureau">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <button mat-button class="login-form-btn" type="submit">s'enregister</button>
+        </div>
+    </form>
+</div>

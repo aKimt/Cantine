@@ -1,0 +1,35 @@
+<div>
+
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>nom d'utilisateur</mat-label>
+                <input matInput formControlName="username">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Votre mot de passe</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        
+        <div *ngIf="!firstTry">
+            <p class="error-message">username/password invalide(s)</p>
+        </div>
+
+        <div>
+            <button mat-button class="login-form-btn" type="submit">se connecter</button>
+        </div>
+        <div>
+            <button mat-button class="login-form-btn" type="button">s'enregistrer</button>
+        </div>
+    </form>
+</div>
+

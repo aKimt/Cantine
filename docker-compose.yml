@@ -1,0 +1,57 @@
+version: "3.9"
+
+networks:
+  backend: {}
+  frontend: {}
+
+services:
+  becantine:
+    container_name: becantine
+    build: ./BECantine/ProduitService
+    expose:
+      - "8989"
+    ports:
+      - "8080:8989"
+    networks:
+      - backend
+      - frontend
+    restart: on-failure
+
+  beconfig:
+    container_name: beconfig
+    build: ./BECantine/ConfigurationServer
+    expose:
+      - "8888"
+    networks:
+      - backend
+
+  fecantine:
+    depends_on:
+      - beconfig
+      - mongodb
+    build: ./FECantine
+    expose:
+      - "80"
+    ports:
+      - "80:80"
+    networks:
+      - frontend
+
+  mongodb:
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: pass
+      MONGO_INITDB_DATABASE: mangerDB
+    expose:
+      - 27017
+    ports:
+      - "27017:27017"
+    networks:
+      - backend
+    volumes:
+      - ./mongo_start/docker-entrypoint-initdb.d/script.js:/docker-entrypoint-initdb.d/init-mongo.js
+
+    
+

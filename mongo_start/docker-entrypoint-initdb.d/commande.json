@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "624717324e3adff511d59fbf"
+  },
+  "user": "leralb",
+  "bureau": "bar",
+  "date": {
+    "$date": {
+      "$numberLong": "1648684800000"
+    }
+  },
+  "nom": "Leroy",
+  "prenom": "Albert",
+  "sandwich": [
+    {
+      "sandwich": "Le mauvais gout",
+      "supplement": [
+        "oeuf dur",
+        "mayonnaise"
+      ],
+      "moins": [
+        "cornichons"
+      ]
+    }
+  ],
+  "plats": [
+    {
+      "plat": "Boulets du chef",
+      "qte": "2"
+    }
+  ]
+}]

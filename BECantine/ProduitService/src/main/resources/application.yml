@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: ProduitService
+  profiles:
+    active: dev
+  config:
+    import: configserver:http://beconfig:8888
+  cloud:
+    config:
+      uri: http://beconfig:8888
+      username: user
+      password: pass
+      label: services
+
