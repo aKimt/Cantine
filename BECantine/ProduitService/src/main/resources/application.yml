@@ -4,7 +4,7 @@ spring:
   profiles:
     active: dev
   config:
-    import: configserver:http://beconfig:8888
+    import: configserver:http://localhost:8888
   cloud:
     config:
       uri: http://beconfig:8888

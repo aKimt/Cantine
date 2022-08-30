@@ -1,10 +1,11 @@
 package iepscf.akimts.produit.exceptions;
 
-import iepscf.akimts.exceptions.annotation.AdvisorHandled;
+import iepscf.akimts.handler.annotation.AdvisorHandled;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 @Getter
+@AdvisorHandled(HttpStatus.NOT_FOUND)
 public class NoRessourseFoundException extends NotFoundException{
 
     private final String searchedBy;

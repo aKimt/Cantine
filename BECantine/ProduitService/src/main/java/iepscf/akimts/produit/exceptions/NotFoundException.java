@@ -1,6 +1,6 @@
 package iepscf.akimts.produit.exceptions;
 
-import iepscf.akimts.exceptions.annotation.AdvisorHandled;
+import iepscf.akimts.handler.annotation.AdvisorHandled;
 import org.springframework.http.HttpStatus;
 
 @AdvisorHandled(HttpStatus.NOT_FOUND)

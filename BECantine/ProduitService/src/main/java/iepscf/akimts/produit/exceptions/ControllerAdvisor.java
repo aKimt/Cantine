@@ -1,14 +1,12 @@
 package iepscf.akimts.produit.exceptions;
 
-import iepscf.akimts.exceptions.AbstractControllerAdvisor;
-import iepscf.akimts.exceptions.BasicControllerExceptionHandler;
-import iepscf.akimts.exceptions.models.ErrorDTO;
-import org.springframework.context.support.DefaultMessageSourceResolvable;
+import iepscf.akimts.handler.AbstractControllerAdvisor;
+import iepscf.akimts.handler.BasicControllerExceptionHandler;
+import iepscf.akimts.handler.models.ErrorDTO;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
