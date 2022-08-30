@@ -1,14 +1,23 @@
 spring:
   application:
-    name: ProduitService
-  profiles:
-    active: dev
-  config:
-    import: configserver:http://localhost:8888
-  cloud:
-    config:
-      uri: http://beconfig:8888
+    name: CommandeService
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: mangerDB
       username: user
       password: pass
-      label: services
+
+server:
+  port: 8080
+
+application:
+  jwt:
+    prefix: "Bearer "
+    header: "Authorization"
+    key: "<J7Fz~X>-/co_*Y"
+    expires: 846000000
+
+  
 

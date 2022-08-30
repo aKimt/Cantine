@@ -10,7 +10,7 @@ import { RegisterForm } from '../models/forms/register.form';
 })
 export class AuthService {
 
-  private BASE_URL: string = "http://localhost:8989/auth";
+  private BASE_URL: string = "http://becantine:8080/auth";
 
   constructor(private _client: HttpClient) { }
 

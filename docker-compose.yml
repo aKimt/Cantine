@@ -9,21 +9,13 @@ services:
     container_name: becantine
     build: ./BECantine/ProduitService
     expose:
-      - "8989"
+      - "8080"
     ports:
-      - "8080:8989"
+      - "8080:8080"
     networks:
       - backend
       - frontend
     restart: on-failure
-
-  beconfig:
-    container_name: beconfig
-    build: ./BECantine/ConfigurationServer
-    expose:
-      - "8888"
-    networks:
-      - backend
 
   fecantine:
     depends_on:
