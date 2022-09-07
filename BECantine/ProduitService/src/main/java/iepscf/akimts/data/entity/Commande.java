@@ -2,14 +2,16 @@ package iepscf.akimts.data.entity;
 
 import lombok.*;
 import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashSet;
-import java.util.Set;
 
 @ToString
 @Getter @Setter
@@ -18,12 +20,14 @@ import java.util.Set;
 @Document("commande")
 public class Commande {
 
-    @MongoId(targetType = FieldType.OBJECT_ID)
+    @Id
+//    @MongoId(targetType = FieldType.OBJECT_ID)
     private ObjectId id;
 
     private String user;
     private String bur;
-    private LocalDate date;
+
+    private Date date;
     private String nom;
     private String prenom;
 

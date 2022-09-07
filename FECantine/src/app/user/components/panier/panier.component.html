@@ -23,8 +23,25 @@
                 <p class="total">{{ total | currency:'EUR' }}</p>
             </div>
         </div>
-        <button mat-raised-button class="confirm-btn" (click)="confirm()">
-            confirmer
-        </button>
+
+        <ng-container *ngIf="!isConnected(); else confirmActive">
+            <p class="injonction">Connectez-vous pour pouvoir commander</p>
+            <button mat-raised-button class="confirm-btn" routerLink="login" (click)="onClose()">
+                se connecter
+            </button>
+            
+            <button mat-raised-button class="confirm-btn" routerLink="register" (click)="onClose()">
+                s'enregistrer
+            </button>
+        </ng-container>
+        
+
+        <ng-template #confirmActive>
+            <p class="injonction" *ngIf="total <= 0">ajouter des items au panier pour commander</p>
+            <button mat-raised-button class="confirm-btn" (click)="confirm()" [disabled]="total <= 0">
+                confirmer
+            </button>
+        </ng-template>
+        
     </div>
 </div>

@@ -2,11 +2,19 @@
     <div class="control-panel">
         <div class="selected-action">
             <div class="info-header">
-                <h4>{{selectedOption ? selectedOption : "annulé"}}</h4>
+                <h4>{{selectedOption ? selectedOption.titre : "annulé"}}</h4>
                 <mat-icon class="info-close" matRipple [matRippleColor]="'rgb(226, 201, 164)'" (click)="onCancel()">close</mat-icon>
             </div>
-            <button mat-raised-button (click)="onAdd()">add</button>
-            <button mat-raised-button (click)="onCancel()">cancel</button>
+
+            <div class="info-contenu">
+                <p>{{ selectedOption?.contenu }}</p>
+            </div>
+            
+
+            <div class="row">
+                <button mat-raised-button (click)="onAdd()" class="add-btn col-lg-6">ajouter</button>
+                <button mat-raised-button (click)="onCancel()" class="cancel-btn col-lg-6">annuler</button>
+            </div>
         </div>
     </div>
 </div>

@@ -10,7 +10,7 @@ import { RegisterForm } from '../models/forms/register.form';
 })
 export class AuthService {
 
-  private BASE_URL: string = "http://becantine:8080/auth";
+  private BASE_URL: string = "http://localhost:8080/auth";
 
   constructor(private _client: HttpClient) { }
 
@@ -34,7 +34,6 @@ export class AuthService {
 
   getToken(){
     const jsonAuth = localStorage.getItem("auth");
-    console.log(jsonAuth)
     return  JSON.parse( jsonAuth == undefined ? '{}' : jsonAuth )?.token
   }
 

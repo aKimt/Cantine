@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+// TODO: rendre immutable (builder)
 public class ErrorDTO extends HashMap<String, Object> {
     public ErrorDTO(String message) {
         this.put("message", message);

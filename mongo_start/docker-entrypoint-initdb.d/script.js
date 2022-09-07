@@ -9,11 +9,7 @@ const boisson = [{
 const commande = [{
     "user": "leralb",
     "bureau": "bar",
-    "date": {
-      "$date": {
-        "$numberLong": "1648684800000"
-      }
-    },
+    "date": new Date(2022,09,15, 12,30,00),
     "nom": "Leroy",
     "prenom": "Albert",
     "sandwich": [
@@ -63,21 +59,8 @@ const platchaud = [{
     ],
     "prix": 4,
     "dates": [
-      {
-        "$date": {
-          "$numberLong": "1648684800000"
-        }
-      },
-      {
-        "$date": {
-          "$numberLong": "1639526400000"
-        }
-      },
-      {
-        "$date": {
-          "$numberLong": "1649376000000"
-        }
-      }
+      new Date(2022,09,15, 08,30,00),
+      new Date(2022,09,15, 12,30,00)
     ]
   }]
 
@@ -154,6 +137,19 @@ const user = [{
   }]
 
   print('Start #################################################################');
+
+  db.createUser(
+    {
+        user: "root",
+        pwd: "password",
+        roles: [
+            {
+                role: "readWrite",
+                db: "mangerDB"
+            }
+        ]
+    }
+);
 
   db.createCollection('boisson');
   db.createCollection('commande');

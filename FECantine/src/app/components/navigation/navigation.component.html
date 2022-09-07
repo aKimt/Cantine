@@ -9,18 +9,26 @@
             <ul class="navbar-nav">
               <ng-container *ngIf="!isConnected; else connected">
                 <li class="nav-item">
-                  <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
+                  <a routerLink="/login" routerLinkActive="active" class="nav-link">login</a>
                 </li>
                 <li class="nav-item">
-                  <a routerLink="/register" routerLinkActive="active" class="nav-link">Register</a>
+                  <a routerLink="/register" routerLinkActive="active" class="nav-link">register</a>
                 </li>
               </ng-container>
               
             <ng-template #connected>
               <li class="nav-item">
-                <a class="nav-link" (click)="onDisconnect()">Déconnexion</a>
+                <a class="nav-link" (click)="onDisconnect()">déconnexion</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/client/my-orders" routerLinkActive="active">mes commandes</a>
               </li>
             </ng-template>
+
+              <li class="nav-item">
+                <a routerLink="/menu" routerLinkActive="active" class="nav-link">menu</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" (click)="openPanier()">panier</a>
               </li>

@@ -5,6 +5,7 @@ import { Action, ActionList } from 'src/app/models/actions.model';
 import { Produit, TypeProduit } from 'src/app/models/produit';
 import { PanierService } from 'src/app/services/panier.service';
 import { PricedItem } from 'src/app/shared/models/priced-item.model';
+import { Panel } from './action-panel/action-panel.component';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class PricedItemComponent implements OnInit {
   actions: Action[] = [];
 
 
-  isControlPanelOpen = new BehaviorSubject<string | undefined>(undefined);
+  isControlPanelOpen = new BehaviorSubject<Panel | undefined>(undefined);
   isOpen= false;
   isPanelOpen = false;
 
@@ -50,8 +51,12 @@ export class PricedItemComponent implements OnInit {
       nom: 'display-info',
       iconName: 'info',
       message: 'afficher plus d\'info',
+      titre: 'plus d\'infos',
       action: (...args : any[]) => {
-        this.isControlPanelOpen.next(this.isPanelOpen ? undefined:'display-info')
+        this.isControlPanelOpen.next(this.isPanelOpen ? undefined:{
+          titre: 'plus d\'info',
+          contenu: this.display.description ? this.display.description : 'pas plus d\'autres infos disponible'
+        })
         this.isPanelOpen = !this.isPanelOpen
       },
     },

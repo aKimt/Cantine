@@ -1,0 +1,21 @@
+$primary: rgb(226, 201, 164);
+$secondary: rgb(60, 57, 53);
+
+.btn-rack {
+    width: 100%;
+}
+
+.btn-rack button{
+    width: 100%;
+    background-color: rgb(222, 131, 131);
+    color: $secondary;
+}
+
+.order-panel {
+    background-color: $secondary;
+    color: $primary;
+}  
+
+.order-title, .order-desc {
+    color: $primary;
+}

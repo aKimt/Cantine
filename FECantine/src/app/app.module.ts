@@ -13,6 +13,7 @@ import { UserModule } from './user/user.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthInterceptor } from './interceptors/auth';
+import { DeleteDialogComponent } from './user/components/single-order/delete-dialog/delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AuthInterceptor } from './interceptors/auth';
     NavigationComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,

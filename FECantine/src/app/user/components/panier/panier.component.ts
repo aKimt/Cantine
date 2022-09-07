@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ACTION_PER_USE } from 'src/app/models/actions.model';
 import { Panier } from 'src/app/models/panier.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { PanierService } from 'src/app/services/panier.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class PanierComponent implements OnInit {
 
   panier!: Panier;
 
-  constructor(private _pServ: PanierService, private _router: Router) { }
+  constructor(private _pServ: PanierService, private _authService: AuthService, private _router: Router) { }
 
   ngOnInit(): void {
     this._pServ.panierChanged.subscribe(newPanier => this.panier = newPanier);
@@ -31,8 +32,12 @@ export class PanierComponent implements OnInit {
   }
 
   confirm(){
-    this._router.navigateByUrl('client/confirm-order');
-    this._pServ.togglePanier(false);
+    if(this.total > 0)
+      this._router.navigateByUrl('client/confirm-order');
+  }
+
+  isConnected(){
+    return this._authService.isConnected
   }
 
 }

@@ -7,6 +7,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { PanierComponent } from './components/panier/panier.component';
 import { ConfirmOrderComponent } from './components/confirm-order/confirm-order.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OrdersComponent } from './components/orders/orders.component';
+import { SingleOrderComponent } from './components/single-order/single-order.component';
 
 
 
@@ -15,7 +17,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AccueilComponent,
     MenuComponent,
     PanierComponent,
-    ConfirmOrderComponent
+    ConfirmOrderComponent,
+    OrdersComponent,
+    SingleOrderComponent,
   ],
   imports: [
     CommonModule,

@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Set;
 
 @ToString
@@ -23,6 +24,6 @@ public class PlatChaud {
     private String desc;
     private Set<Composant> compisition = Set.of();
     private double prix;
-    private Set<LocalDate> dates = Set.of();
+//    private Set<Date> dates = Set.of();
 
 }

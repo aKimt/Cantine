@@ -53,7 +53,7 @@ public class JwtProvider {
             DecodedJWT jwt = verification.build().verify(token);
             UserDetails details = service.loadUserByUsername( jwt.getSubject() );
             return true;
-        }
+        } 
         catch (AlgorithmMismatchException | SignatureVerificationException ex){
             logger.warn("AUTHENTICATION FAILED - token falsified");
             return false;

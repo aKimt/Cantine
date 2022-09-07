@@ -3,7 +3,11 @@ package iepscf.akimts.produit.mapper;
 import iepscf.akimts.data.entity.Commande;
 import iepscf.akimts.produit.models.form.CommandeForm;
 
-public final class CommandeMapper {
+import java.time.ZoneId;
+import java.util.Date;
+
+public final class
+CommandeMapper {
 
     // no instance for this class
     private CommandeMapper(){}
@@ -27,7 +31,8 @@ public final class CommandeMapper {
 
         Commande cmd = new Commande();
 
-        cmd.setDate(form.getDate());
+        Date date = Date.from( form.getDate().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant() );
+        cmd.setDate( date );
 
         cmd.setBoissons(form.getBoissons());
         cmd.setSandwich(form.getSandwiches());

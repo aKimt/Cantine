@@ -2,10 +2,11 @@ version: "3.9"
 
 networks:
   backend: {}
-  frontend: {}
 
 services:
   becantine:
+    depends_on:
+      - mongodb
     container_name: becantine
     build: ./BECantine/ProduitService
     expose:
@@ -14,27 +15,21 @@ services:
       - "8080:8080"
     networks:
       - backend
-      - frontend
     restart: on-failure
 
   fecantine:
-    depends_on:
-      - beconfig
-      - mongodb
     build: ./FECantine
     expose:
       - "80"
     ports:
       - "80:80"
-    networks:
-      - frontend
 
   mongodb:
     image: mongo:latest
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: user
-      MONGO_INITDB_ROOT_PASSWORD: pass
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
       MONGO_INITDB_DATABASE: mangerDB
     expose:
       - 27017

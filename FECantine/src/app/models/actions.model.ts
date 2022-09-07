@@ -2,6 +2,7 @@ export interface Action {
     nom: string,  
     iconName: string,
     message: string,
+    titre?: string,
     action: (...args: any[]) => void
 }
 

@@ -4,6 +4,7 @@ import { AuthGuard } from '../guards/auth.guard';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { ConfirmOrderComponent } from './components/confirm-order/confirm-order.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 const routes: Routes = [
     { path: "", children: [
@@ -11,6 +12,7 @@ const routes: Routes = [
         { path: "accueil", component: AccueilComponent},
         { path: "menu", component: MenuComponent },
         { path: "confirm-order", component: ConfirmOrderComponent, canActivate: [AuthGuard] },
+        { path: "my-orders", component: OrdersComponent, canActivate: [AuthGuard] }
     ] }
 ]
 

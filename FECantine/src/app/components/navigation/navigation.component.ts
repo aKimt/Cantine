@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { PanierService } from 'src/app/services/panier.service';
 
@@ -10,7 +11,7 @@ import { PanierService } from 'src/app/services/panier.service';
 export class NavigationComponent implements OnInit {
 
 
-  constructor(private _panierServ: PanierService, private _authServ: AuthService) { }
+  constructor(private _panierServ: PanierService, private _authServ: AuthService, private _router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +30,7 @@ export class NavigationComponent implements OnInit {
 
   onDisconnect(){
     this._authServ.disconnect();
+    this._router.navigate(['client', 'accueil']);
   }
 
 }

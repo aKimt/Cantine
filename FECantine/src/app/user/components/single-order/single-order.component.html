@@ -1,0 +1,52 @@
+<mat-expansion-panel 
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+    class="order-panel"
+>
+    <mat-expansion-panel-header>
+    <mat-panel-title class="order-title">
+        bureau: {{ order.bur }}
+    </mat-panel-title>
+    <mat-panel-description class="order-desc">
+        {{ order.date | date:"hh:mm - dd/MM/yy" }}
+    </mat-panel-description>
+    </mat-expansion-panel-header>
+   
+    <ng-container *ngIf="order.boissons && order.boissons.length > 0">
+        <h3>
+            Boissons
+        </h3>
+        <div>
+            <ul>
+                <li *ngFor="let boisson of order.boissons">{{ boisson.nom }} - {{ boisson.qte }}</li>
+            </ul>
+        </div>
+    </ng-container>
+    
+    <ng-container *ngIf="order.sandwichs && order.sandwichs.length > 0">
+        <h3>
+            Sandwiches
+        </h3>
+        <div>
+            <ul>
+                <li *ngFor="let sandwich of order.sandwichs">{{ sandwich.nom }} - {{ sandwich.qte }}</li>
+            </ul>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="order.platsChauds && order.platsChauds.length > 0">
+        <h3>
+            Plats Chauds
+        </h3>
+        <div>
+            <ul>
+                <li *ngFor="let plat of order.platsChauds">{{ plat.nom }} - {{ plat.qte }}</li>
+            </ul>
+        </div>
+    </ng-container>
+
+    <div class="btn-rack">
+        <button mat-raised-button (click)="openDialog()">delete</button>
+    </div>
+
+</mat-expansion-panel>

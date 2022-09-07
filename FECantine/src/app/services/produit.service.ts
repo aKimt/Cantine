@@ -5,7 +5,7 @@ import { map, Observable } from 'rxjs';
 import { Collection } from '../models/hateoas.model';
 import { Boisson, Composant, PlatChaud, ProduitList, Sandwich } from '../models/produit';
 
-const BASE_URL = "http://becantine:8080/produit"
+const BASE_URL = "http://localhost:8080/produit"
 
 @Injectable({
   providedIn: 'root'

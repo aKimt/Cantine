@@ -1,0 +1,19 @@
+$primary: rgb(226, 201, 164);
+$secondary: rgb(60, 57, 53);
+
+#orders-holder {
+    margin: 20px 20%;
+    background-color: $primary;
+    color: $secondary;
+}
+
+#orders-title {
+    background-color: $secondary;
+    color: $primary;
+    padding: 10px;
+}
+
+#orders-content {
+    width: 100%;
+    padding: 20px;
+}

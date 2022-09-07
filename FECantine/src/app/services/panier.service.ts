@@ -5,7 +5,7 @@ import { CmdProduit, CmdSandwich, CommandeForm } from '../models/commande.form';
 import { Panier, PanierItem } from '../models/panier.model';
 import { Boisson, Produit, PlatChaud, Sandwich, TypeProduit } from '../models/produit';
 
-const BASE_URL = "http://becantine:8080/commande"
+const BASE_URL = "http://localhost:8080/commande"
 const STORAGE_KEY = "panier";
 
 @Injectable({

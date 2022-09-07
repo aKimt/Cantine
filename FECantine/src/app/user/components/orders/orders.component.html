@@ -1,0 +1,15 @@
+
+<div id="orders-holder">
+    <h2 id="orders-title">Vos commandes</h2>
+    <div id="orders-content">
+
+        <mat-accordion *ngIf="orders && orders.length > 0; else noOrders">
+            <app-single-order [order]="order" (refreshNeeded)="loadOrders()" *ngFor="let order of orders"></app-single-order>
+        </mat-accordion>
+
+        <ng-template #noOrders>
+            <p>pas de commandes...</p>
+        </ng-template>
+    </div>
+</div>
+

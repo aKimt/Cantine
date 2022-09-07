@@ -1,13 +1,9 @@
 spring:
   application:
     name: CommandeService
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: mangerDB
-      username: user
-      password: pass
+
+  profiles:
+    active: dev
 
 server:
   port: 8080
@@ -18,6 +14,3 @@ application:
     header: "Authorization"
     key: "<J7Fz~X>-/co_*Y"
     expires: 846000000
-
-  
-

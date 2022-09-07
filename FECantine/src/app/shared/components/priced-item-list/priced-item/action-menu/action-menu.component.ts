@@ -37,7 +37,6 @@ export class ActionMenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.actions)
   }
 
   triggerMouseIn(value: boolean){

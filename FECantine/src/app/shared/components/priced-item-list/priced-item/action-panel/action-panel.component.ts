@@ -5,6 +5,11 @@ import { Produit, TypeProduit } from 'src/app/models/produit';
 import { PanierService } from 'src/app/services/panier.service';
 import { PricedItem } from 'src/app/shared/models/priced-item.model';
 
+export interface Panel {
+  titre: string,
+  contenu: string
+}
+
 @Component({
   selector: 'shared-action-panel',
   templateUrl: './action-panel.component.html',
@@ -21,14 +26,14 @@ import { PricedItem } from 'src/app/shared/models/priced-item.model';
 export class ActionPanelComponent implements OnInit {
 
   @Input("isOpen")
-  open!: Observable<string | undefined>;   
+  open!: Observable<Panel | undefined>;   
 
   @Output()
   mousein=new EventEmitter<boolean>();
   @Output()
   cancelled=new EventEmitter<undefined>();
 
-  selectedOption?: string;
+  selectedOption?: Panel;
 
   @Input()
   selectedItem!: Produit;
@@ -40,7 +45,6 @@ export class ActionPanelComponent implements OnInit {
 
   ngOnInit(): void {
     this.open?.subscribe((action) => {
-      console.log("action: "+action)
       this.selectedOption = action
     })
   }

@@ -7,7 +7,9 @@ import lombok.EqualsAndHashCode;
 import org.bson.types.ObjectId;
 import org.springframework.hateoas.RepresentationModel;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -20,7 +22,7 @@ public class PlatChaudDTO extends RepresentationModel<PlatChaudDTO> implements P
     private double prix;
     private String description;
     private Set<ComposantDTO> composants;
-    private Set<LocalDate> dates;
+//    private Set<LocalDate> dates;
 
     public static PlatChaudDTO of(PlatChaud entity){
 
@@ -30,7 +32,13 @@ public class PlatChaudDTO extends RepresentationModel<PlatChaudDTO> implements P
         PlatChaudDTO platChaudDTO = new PlatChaudDTO();
 
         platChaudDTO.setId(entity.getId());
-        platChaudDTO.setDates(entity.getDates());
+//        platChaudDTO.setDates(entity.getDates().stream()
+//                .map(
+//                    date -> Instant.ofEpochMilli(date.getTime())
+//                        .atZone(ZoneId.systemDefault())
+//                        .toLocalDate()
+//                )
+//                .collect(Collectors.toSet()));
         platChaudDTO.setNom(entity.getNom());
         platChaudDTO.setDescription(entity.getDesc());
         platChaudDTO.setPrix(entity.getPrix());
